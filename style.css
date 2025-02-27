@@ -55,11 +55,13 @@ body * {
 /* ISSO CONFIGURA A CAIXA QUE MANTERÁ OS LINKS FUTURAMENTE */
 
 #container {
-   width: 360px; ;
+   width: 100%; 
    margin: auto;
    padding-top: 56px;
    padding: 0 24px;
+   max-width: 588px;
 }
+
 
 /* Pode-se usar o profile como block para centralizar a imagem
 ou criar uma tag pai para usar o comando text align.
