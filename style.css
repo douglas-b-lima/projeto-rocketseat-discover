@@ -110,7 +110,13 @@ z-index: 1;
 transform: translateY(-50%);
 top: 50%;
 left: 0;
+
+animation: slide-out 0.2s ;
 }
+
+ #switch button:hover {
+   outline: 8px solid var(--highlight-color);
+ }
 
 #switch span {
    display: block;
@@ -125,8 +131,8 @@ left: 0;
 }
 
 .light #switch button {
-   right: 0;
-   left: initial;
+   animation: slide-in 0.2s forwards;
+ 
 }
   
  
@@ -194,6 +200,12 @@ ul li a:hover {
    font-size: 14px;
  }
 
+
+ /* As medias queries servem para definir o comportamento do site em diferentes
+ tamanhos de tela. */
+
+ /* MEDIA QUERIES */
+
  @media (min-width : 700px) {
 
    :root {
@@ -203,3 +215,32 @@ ul li a:hover {
       --bg-url: url(./assets/bg-desktop-light.jpg);   
    }
  }
+  
+/* Agora será feia a animação do botão switch para que ele deslize
+ao invés de fazer a transição dura */
+
+/* KEYFRAMES */
+
+@keyframes slide-in {
+
+   from{
+      left: 0;
+   }
+
+   to {
+      left: 50%;
+   }
+  
+}
+
+@keyframes slide-out {
+
+   from{
+      left: 50%;
+   }
+
+   to {
+      left: 0;
+   }
+  
+}
