@@ -1,0 +1,192 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Essas são as variáveis que ponho após definir o root da pagina, usei para fazer
+o modo light seguindo a aula */
+:root {
+   --text-color:white;
+   --bg-url: url(./assets/bg-mobile.jpg);
+   --stroke-color: rgba(255, 255, 255, 0.5);
+   --surface-color: rgba(255, 255, 255, 0.1);
+   --surface-color-hover:rgba(255, 255, 255, 0.1);
+   --highlight-color:rgba(255, 255, 255, 0.1);
+   --switch-bg-url: url(./assets/jesus.svg);
+}
+
+.light {
+   --text-color:black;
+   --bg-url: url(./assets/bg-mobile-light.jpg);
+   --stroke-color: rgba(0, 0, 0, 0.5);
+   --surface-color: rgba(0, 0, 0, 0.05);
+   --surface-color-hover: rgba(0, 0, 0, 0.05);
+   --highlight-color:rgba(0, 0, 0, 0.06);
+   --switch-bg-url:url(./assets/sun.svg);
+}
+   
+  
+
+
+body {
+/*
+   background-image: url(./assets/bg-mobile.jpg);
+   background-repeat: no-repeat;
+   background-position: top center;
+   background-size: cover;
+*/
+
+/* background : color image no repeat position/size. 
+   ISSO É UM ATALHO OU SHORTHAND 
+   BACKGROUND IMAGEM DE FUNDO*/
+
+background: var(--bg-url) no-repeat top center/cover;
+} 
+
+body * {
+   font-family: 'Inter', sans-serif;
+   color: var(--text-color);
+   text-align: center;
+    font-weight: 500; 
+    line-height: 24px;
+}
+
+/* ISSO CONFIGURA A CAIXA QUE MANTERÁ OS LINKS FUTURAMENTE */
+
+#container {
+   width: 360px; ;
+   margin: auto;
+   padding-top: 56px;
+   padding: 0 24px;
+}
+
+/* Pode-se usar o profile como block para centralizar a imagem
+ou criar uma tag pai para usar o comando text align.
+*/
+
+/* PROFILE */
+
+#profile {
+   text-align:center;
+}
+
+#profile img{
+   width: 160px;
+   height: 160px;
+   padding: 24px;
+  
+  }
+
+#profile p {
+   font-weight: 500;
+   line-height: 10px;
+  font-size: 22px;
+  margin-bottom: 1px;
+  padding-bottom: 20px;
+}
+
+/*BOTÃO DE SWITCH */
+
+#switch {
+   
+   position: relative;
+   width: 64px;
+   margin: 4px auto;
+}
+
+#switch  button {  
+    
+width: 32px;
+height: 32px;
+background: white var(--switch-bg-url) no-repeat  center;
+border-radius: 50%; 
+border: 0;
+position: absolute;
+z-index: 1;
+transform: translateY(-50%);
+top: 50%;
+left: 0;
+}
+
+#switch span {
+   display: block;
+   width: 64px;
+   height: 32px;
+   background: var(--surface-color);
+   border: 1px solid var(--stroke-color);
+   border-radius: 9999px;
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   margin: auto;
+}
+
+.light #switch button {
+   right: 0;
+   left: initial;
+}
+  
+ 
+/* LISTAS DE LINKS */
+
+  ul {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   padding-top: 8px;
+ }
+
+
+  ul li a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 56px;
+   background:var(--surface-color);
+   border: 1px solid var(--stroke-color);
+   border-radius: 8px;
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   text-decoration: none;
+   font-weight: 500;
+   transition: background 0.2s;
+ 
+
+}
+
+ul li a:hover {
+   background: rgba(255, 255, 255, 0.1);
+   border: var(--text-color);
+}
+
+/* SOCIAL LINKS THUMBNAIS */
+
+  #sociallinks {
+   display: flex;
+   justify-content: center;
+   
+   padding: 24px;
+   font-size: 24px;
+ }
+
+ #sociallinks a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 16px;
+   transition: background 0.2s;
+   border-radius: 50%;
+ }
+ 
+ #sociallinks :hover {
+   background:var(--highlight-color);
+ }
+
+
+ /* FOOTER */
+ footer {
+   padding: 24px;
+   text-align: center;
+   font-size: 14px;
+ }
